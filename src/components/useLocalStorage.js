@@ -25,7 +25,6 @@ const addBook = book => {
 
 const removeBook = id => {
     newArray = JSON.parse(localStorage.getItem('cart'));
-    console.log(newArray)
     localStorage.setItem('cart', JSON.stringify(newArray.filter(item => item.id !== id)));
     setBookCart(JSON.parse(localStorage.getItem('cart')));
 }
