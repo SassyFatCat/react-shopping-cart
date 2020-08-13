@@ -9,7 +9,10 @@ const Item = props => {
 			<div>
 				<h1>{props.title}</h1>
 				<p>$ {props.price}</p>
-				<button>Remove from cart</button>
+				<button onClick={event => {
+					event.preventDefault();
+					props.removeItem(props.title, props.index)
+				}}>Remove from cart</button>
 			</div>
 		</div>
 	);
