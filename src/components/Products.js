@@ -10,9 +10,10 @@ const productContexts = useContext(ProductContext)
 
 	return (
 		<div className="products-container">
-			{productContexts.products.map(product => (
+			{productContexts.products.map((product, index) => (
 				<Product
-					key={product.id}
+					key={index}
+					id={index}
 					product={product}
 					addItem={productContexts.addItem}
 				/>

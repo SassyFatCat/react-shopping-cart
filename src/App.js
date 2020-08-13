@@ -13,7 +13,7 @@ import ShoppingCart from './components/ShoppingCart';
 const initialLocalCart = [];
 const getFromLocalStorage = () => {
 if (localStorage.getItem('cart')) {
-	return JSON.parse(localStorage.getItem('cart')).map(item => data.find(book => book.title === item))
+	return JSON.parse(localStorage.getItem('cart'))
 }
 else {
 	return []
@@ -30,14 +30,13 @@ function App() {
 		item
 	]);
 
-	setToLocalStorage(item.title)
+	setToLocalStorage(item)
 	};
 
-	const removeItem = (title, index) => {
+	const removeItem = (id) => {
+		setCart(cart.filter(item => item.id !== id));
 		const localCart = JSON.parse(localStorage.getItem('cart'));
-		localCart.splice(index, 1);
-		setCart(localCart.map(item => data.find(book => book.title === item)))
-		localStorage.setItem('cart', JSON.stringify(localCart))
+		localStorage.setItem('cart', JSON.stringify(localCart.filter(item => item.id !== id)))
 	}
 	
 	const setToLocalStorage = (item) => {
