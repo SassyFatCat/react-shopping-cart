@@ -15,7 +15,7 @@ const productContexts = useContext(ProductContext)
 					key={index}
 					id={index}
 					product={product}
-					addItem={productContexts.addItem}
+					addBook={productContexts.addBook}
 				/>
 			))}
 		</div>

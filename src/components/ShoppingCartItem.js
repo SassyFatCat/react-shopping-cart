@@ -11,7 +11,7 @@ const Item = props => {
 				<p>$ {props.price}</p>
 				<button onClick={event => {
 					event.preventDefault();
-					props.removeItem(props.id)
+					props.removeBook(props.id)
 				}}>Remove from cart</button>
 			</div>
 		</div>
